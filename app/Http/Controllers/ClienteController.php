@@ -40,7 +40,6 @@ class ClienteController extends Controller
             'telefono' => 'required|max:15',
             'direccion' => 'required|max:255',
             'nit' => 'required|max:20',
-            'estados' => 'required|in:activo,inactivo',
         ]);
         Cliente::create($datos);
         return redirect()->route('clientes.index')->with('mensaje', 'Cliente creado correctamente.');
@@ -81,7 +80,6 @@ class ClienteController extends Controller
             'telefono' => 'required|max:15',
             'direccion' => 'required|max:255',
             'nit' => 'required|max:20',
-            'estados' => 'required|in:activo,inactivo',
         ]);
         $cliente->update($datos);
         return redirect()->route('clientes.index')->with('mensaje', 'Cliente actualizado correctamente.');
